@@ -16,13 +16,13 @@ Exercício de Avaliação - SQL
 
 ```sql
 CREATE TABLE venda (
-  codvenda INT PRIMARY KEY, 
+  codvenda INT PRIMARY KEY,
   codcliente INT,
   codlivro INT,
   dataventa DATE,
   quantidade INT,
   valorpago DECIMAL(10,2),
-  
+
   FOREIGN KEY (codcliente) REFERENCES cliente (idcliente),
   FOREIGN KEY (codlivro)  REFERENCES livro(codlivro),
 );
@@ -32,34 +32,100 @@ CREATE TABLE venda (
 
 - tabela autor:
 
-![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled.png)
+| codautor | nome                |
+| -------- | ------------------- |
+| 1        | Machado de Assis    |
+| 2        | Gabriel G. Marquez  |
+| 3        | Leon Tostoi         |
+| 4        | Elizabeth Rudnick   |
+| 5        | Foster Provost      |
+| 6        | Tom Fawcett         |
+| 7        | Ramesh Sharda       |
+| 8        | Efraim Turban       |
+| 9        | Ramez Elmasri       |
+| 10       | Shamkant B. Navathe |
+| 11       | John E. Hall        |
+
+<hr>
+<br>
 
 - Tabela livro:
 
-![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%201.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%201.png)
+| codlivro | titulo              | ano  | editora     | area       | preco  |
+| -------- | ------------------- | ---- | ----------- | ---------- | ------ |
+| 10       | Dom Casmurro        | 2019 | Principis   | Romance    | 180.00 |
+| 20       | Cem Anos de Solidao | 2018 | Record      | Romance    | 120.00 |
+| 30       | Anna Karienina      | 1877 | Livro e Cia | Romance    | 250.00 |
+| 40       | O Rei Leao          | 1995 | Livro e Cia | Infantil   | 35.00  |
+| 50       | Data science        | 2016 | Atlas       | Tecnologia | 135.00 |
+| 60       | BI                  | 2019 | Atlas       | Tecnologia | 138.00 |
+| 70       | Banco de Dados      | 2010 | Pearson     | Tecnologia | 220.00 |
+| 80       | Fisiologia          | 2016 | Koogan      | Medicina   | 540.00 |
+| 90       | Anatomia            | 2014 | Koogan      | Medicina   | 500.00 |
+| 100      | Histologia Basica   | 2015 | Koogan      | Medicina   | 387.00 |
+| 110      | Enxaqueca           | 2019 | Koogan      | Medicina   | 57.00  |
+
+<hr>
+<br>
 
 - Tabela autorlivro:
 
-![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%202.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%202.png)
+| codautor | codlivro |
+| -------- | -------- |
+| 1        | 10       |
+| 2        | 20       |
+| 3        | 30       |
+| 4        | 40       |
+| 5        | 50       |
+| 6        | 50       |
+| 7        | 60       |
+| 8        | 60       |
+| 9        | 70       |
+| 10       | 70       |
+| 11       | 80       |
+| 11       | 90       |
+| 11       | 100      |
+| 11       | 110      |
+
+<hr>
+<br>
 
 - Tabela cliente:
 
-![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%203.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%203.png)
+| idcliente | nome             | endereco                             |
+| --------- | ---------------- | ------------------------------------ |
+| 1000      | Joao Oliveira    | Projetada, 22, Rio Branco-AC         |
+| 2000      | Maria da Paz     | Rua do Maracatu, 23, Rio Branco-AC   |
+| 3000      | Jose Bonifacio   | Av. Conselheiro Aguiar,10, Xapuri-AC |
+| 5000      | Francisco Dantas | null                                 |
+
+<hr>
+<br>
 
 - Tabela venda:
 
-![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%204.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%204.png)
+| codvenda | codcliente | codlivro | dataventa                | quantidade | valorpago |
+| -------- | ---------- | -------- | ------------------------ | ---------- | --------- |
+| 1001     | 1000       | 10       | 2021-01-10T00:00:00.000Z | 1          | 150.00    |
+| 1002     | 1000       | 20       | 2020-04-08T00:00:00.000Z | 2          | 240.00    |
+| 1003     | 2000       | 30       | 2019-04-18T00:00:00.000Z | 2          | 500.00    |
+| 1004     | 3000       | 80       | 2020-02-12T00:00:00.000Z | 1          | 540.00    |
+| 1005     | 3000       | 90       | 2019-10-10T00:00:00.000Z | 1          | 500.00    |
+| 1006     | 3000       | 10       | 2019-10-23T00:00:00.000Z | 1          | 150.00    |
+
+<hr>
+<br>
 
 ## **Usando SQL, responda ao menos 10 das questões abaixo de 1 a 15.**
 
 1. Quais os títulos dos livros da área 'Romance' publicados antes de 2010?
 
 ```sql
-SELECT * FROM livro 
+SELECT * FROM livro
 WHERE area = 'Romance' AND ano <= 2010;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%205.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%205.png)
 
@@ -71,7 +137,7 @@ INNER JOIN venda ON cliente.idcliente = venda.codcliente
 WHERE venda.codlivro = 20;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%206.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%206.png)
 
@@ -84,27 +150,27 @@ INNER JOIN autor ON autor.codautor = autorlivro.codautor
 WHERE autor.codautor = 1; -- código do autor Machado de Assis
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%207.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%207.png)
 
 4. Qual o menor e maior preço de livros da área de Tecnologia?
 
 ```sql
-SELECT MIN(preco) AS menor_preco, MAX(preco) AS maior_preco 
+SELECT MIN(preco) AS menor_preco, MAX(preco) AS maior_preco
 FROM livro
 WHERE area = 'Tecnologia';
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%208.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%208.png)
 
 5. Modifique o preço do livro 'Dom Casmurro' para 180 reais.
 
 ```sql
-UPDATE livro 
-SET preco = 180.00 
+UPDATE livro
+SET preco = 180.00
 where codlivro = 10;
 ```
 
@@ -125,13 +191,13 @@ WHERE area = 'Tecnologia';
 8. Qual a média de preços dos livros da editora 'Koogan'?
 
 ```sql
-SELECT editora,  AVG(preco) AS media_preco 
+SELECT editora,  AVG(preco) AS media_preco
 FROM livro
 WHERE editora = 'Koogan'
 GROUP BY editora;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%209.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%209.png)
 
@@ -144,7 +210,7 @@ WHERE area = 'Tecnologia'
 GROUP BY area;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2010.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2010.png)
 
@@ -158,7 +224,7 @@ INNER JOIN livro on livro.codlivro = autorlivro.codlivro
 where livro.codlivro = 70; -- código do livro Banco de Dados
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2011.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2011.png)
 
@@ -169,7 +235,7 @@ select nome from cliente
 where endereco LIKE '%Xapuri%';
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2012.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2012.png)
 
@@ -183,7 +249,7 @@ GROUP BY livro.titulo
 HAVING COUNT(venda.codlivro) >= 2;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2013.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2013.png)
 
@@ -197,7 +263,7 @@ WHERE NOT EXISTS (
 );
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2014.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2014.png)
 
@@ -205,13 +271,13 @@ Retorno:
 
 ```sql
 SELECT cliente.nome, SUM(venda.valorpago) as valor_gasto_em_compras
-FROM venda 
+FROM venda
 INNER JOIN cliente on cliente.idcliente = venda.codcliente
 WHERE venda.codcliente = 3000
 GROUP BY cliente.nome;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2015.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2015.png)
 
@@ -222,6 +288,6 @@ SELECT nome from cliente
 WHERE endereco ISNULL;
 ```
 
-Retorno: 
+Retorno:
 
 ![Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2016.png](Exerci%CC%81cio%20de%20Avaliac%CC%A7a%CC%83o%20-%20SQL%202cfd60612d784134b7105c8affcf3a1a/Untitled%2016.png)
