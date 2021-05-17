@@ -46,7 +46,6 @@ CREATE TABLE venda (
 | 10       | Shamkant B. Navathe |
 | 11       | John E. Hall        |
 
-<hr>
 <br>
 
 - Tabela livro:
@@ -65,7 +64,6 @@ CREATE TABLE venda (
 | 100      | Histologia Basica   | 2015 | Koogan      | Medicina   | 387.00 |
 | 110      | Enxaqueca           | 2019 | Koogan      | Medicina   | 57.00  |
 
-<hr>
 <br>
 
 - Tabela autorlivro:
@@ -87,7 +85,6 @@ CREATE TABLE venda (
 | 11       | 100      |
 | 11       | 110      |
 
-<hr>
 <br>
 
 - Tabela cliente:
@@ -99,7 +96,6 @@ CREATE TABLE venda (
 | 3000      | Jose Bonifacio   | Av. Conselheiro Aguiar,10, Xapuri-AC |
 | 5000      | Francisco Dantas | null                                 |
 
-<hr>
 <br>
 
 - Tabela venda:
@@ -113,7 +109,6 @@ CREATE TABLE venda (
 | 1005     | 3000       | 90       | 2019-10-10T00:00:00.000Z | 1          | 500.00    |
 | 1006     | 3000       | 10       | 2019-10-23T00:00:00.000Z | 1          | 150.00    |
 
-<hr>
 <br>
 
 ## **Usando SQL, responda ao menos 10 das questões abaixo de 1 a 15.**
